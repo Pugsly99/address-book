@@ -39,24 +39,34 @@ AddressBook.prototype.deleteContact = function(id) {
   return false;
 }
 
+// AddressBook.prototype.addressCounter = function(){
+//   for (i=0; i< this.address.length; i++) {
+//       if (this.address[i] == [0]) {
+//         return address[i];
+//       } else if (this.address[i] == [1]) {
+//         return address[i];
+//       }
+//     }
+// } 
 
 //Logic for Contacts--------
 function Address(workAddress, personalAddress){
   this.workAddress = workAddress;
-  this.personalAddress = personalAddress;
+  this.personalAddress = personalAddress; 
 }
 
-Address.prototype.addAddress = function() {
-  this.address.push(contact);
-}
-
-function Contact(firstName, lastName, phoneNumber, email, address) {
+function Contact(firstName, lastName, phoneNumber, email) {
   this.firstName = firstName;
   this.lastName = lastName;
   this.phoneNumber = phoneNumber;
   this.email = email;
-  this.address = Address; 
-  }
+  this.address = []; 
+}
+
+
+Contact.prototype.addAddress = function(address) {
+  this.address.push(address);
+}
 
 
 Contact.prototype.fullName = function() {
@@ -76,17 +86,25 @@ function displayContactDetails(addressBookToDisplay) {
 }
 
 function showContact(contactId) {
-  const contact = addressBook.findContact(contactId); 
+  const contact = addressBook.findContact(contactId);
+
   $("#show-contact").show();
   $(".first-name").html(contact.firstName);
   $(".last-name").html(contact.lastName);
   $(".phone-number").html(contact.phoneNumber);
   $(".email").html(contact.email);
-  $(".address").html(contact.address);
+
+  contact.address.forEach(function (address){
+    $(".address-home").html(address.personalAddress);
+    $(".address-work").html(address.workAddress);
+  });
+
   let buttons = $("#buttons");
   buttons.empty();
   buttons.append("<button class= 'deleteButton' id=" + contact.id + ">Delete</button>");
 }
+
+
 
 function attachContactListeners() {
   $("ul#contacts").on("click", "li", function(){
@@ -111,8 +129,8 @@ $(document).ready(function(){
     const inputtedPersonalAddress = $("input#new-personalAddress").val();
     let newAddress = new Address (inputtedWorkAddress, inputtedPersonalAddress)
     let newContact = new Contact (inputtedFirstName, inputtedLastName, inputtedPhoneNumber, inputtedEmail, newAddress);
-    addressBook.addContact(newContact);
     newContact.addAddress(newAddress);
+    addressBook.addContact(newContact);
     displayContactDetails(addressBook);
   });
 });
