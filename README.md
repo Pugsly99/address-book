@@ -2,7 +2,7 @@
 
 #### _This is a practice project for week 4 lesson 15 , 11.2.2020_
 
-#### By **Kaila Sprague McRae** *and* **Brian Sturgis**
+#### By **Kaila Sprague McRae** *and* **Brian Sturgis** *and* **Ryland Adams** 
 
 ## Description
 
@@ -27,6 +27,7 @@ _Go to my GitHub repository here, [https://guthub.com/kaila.spraguemcrae/address
 _If you run into any problems or have any questions please contact us via email:_
 - _Kaila Sprague McRae: [kaila.sprague@icloud.com](mailto:kaila.sprague@icloud.com)._
 - _Brian Sturgis: [sturujisu@gmail.com](mailto:sturujisu@gmail.com)_
+- _Ryland Adams: [rylandadams@yahoo.com](mailto:rylandadams@yahoo.com)_
 
 ## Technologies Used
 
@@ -61,4 +62,4 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-Copyright (c) 2020 Kaila Sprague McRae and Brian Sturgis
+Copyright (c) 2020 Kaila Sprague McRae and Brian Sturgis and Ryland Adams
